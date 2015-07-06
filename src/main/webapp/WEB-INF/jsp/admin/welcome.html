@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>welcome</title>
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/jquery-1.8.1.min.js"></script>
+</head>
+<body>
+<div class="opt_cont">
+  <div class="opt_lanbar"><a href="welcome.html">首页</a> &gt; </div>
+  <div class="search_box">
+    <form id="search" method="post">
+      <input name="find" type="text" size="60" />
+      <input type="submit" value="搜索" />
+    </form>
+  </div>
+  <div class="search_box">
+  <div>平层面积：<a class="point" href="#">不限</a>
+  <a href="#">100~120平</a>
+  <a href="#">120~160平</a>
+  <a href="#">160平以上</a></div>
+  <div>类型：<a class="point" href="#">不限</a>
+  <a href="#">别墅</a>
+  <a href="#">联排</a>
+  <a href="#">洋房</a></div>
+  <div>户型：<input name="" type="checkbox" value="" />书房
+  <input name="" type="checkbox" value="" />保姆房
+  <input name="" type="checkbox" value="" />健身房
+  <input name="" type="checkbox" value="" />观影房</div>
+  <div>配套：<input name="" type="checkbox" value="" />全新装修无配套
+  <input name="" type="checkbox" value="" />家电齐全
+  <input name="" type="checkbox" value="" />地暖
+  <input name="" type="checkbox" value="" />马桶
+  <input name="" type="checkbox" value="" />中庭
+  <input name="" type="checkbox" value="" />江景
+  <input type="button" value="确定" /></div>
+  </div>
+  <div class="img_box">
+    <div class="img"><img src="../img/house.png" width="300" height="200" />
+      <div class="img_font"><span>龙湖紫都城</span><a href="#">编辑</a> | <a href="houseView.html">查看</a></div>
+    </div>
+    <div class="img"><img src="../img/house.png" width="300" height="200" />
+      <div class="img_font"><span>龙湖紫都城</span><a href="#">编辑</a> | <a href="houseView.html">查看</a></div></div>
+    <div class="img"><img src="../img/house.png" width="300" height="200" />
+      <div class="img_font"><span>龙湖紫都城</span><a href="#">编辑</a> | <a href="houseView.html">查看</a></div></div>
+    <div class="img"><img src="../img/house.png" width="300" height="200" />
+      <div class="img_font"><span>龙湖紫都城</span><a href="#">编辑</a> | <a href="houseView.html">查看</a></div></div>
+    <div class="img"><img src="../img/house.png" width="300" height="200" />
+      <div class="img_font"><span>龙湖紫都城</span><a href="#">编辑</a> | <a href="houseView.html">查看</a></div></div>
+    <div class="img"><img src="../img/house.png" width="300" height="200" />
+      <div class="img_font"><span>龙湖紫都城</span><a href="#">编辑</a> | <a href="houseView.html">查看</a></div></div>
+    <div class="overflow"></div>
+    <div class="page_box"> 共<span>122</span>条记录 / 每页<span>5</span>条 / 共<span>23</span>页 / 第
+      <select name="page">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+      页
+      <input type="button" name="top" value="<< 首页" />
+      <input type="button" name="back" value="< 上页" />
+      <input type="button" name="next" value="下页 >" />
+      <input type="button" name="bottom" value="尾页 >>" />
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){
+	//处理分页
+	$("input[name='top']").click(function(){
+		$("select[name='page']").get(0).selectedIndex = 0;
+	});
+	$("input[name='back']").click(function(){
+		var i = $("select[name='page']").get(0).selectedIndex;
+		if(i>0){
+			$("select[name='page']").get(0).selectedIndex = i-1;
+		}
+	});
+	$("input[name='next']").click(function(){
+		$("select[name='page'] option:selected").next().attr("selected","selected");
+	});
+	$("input[name='bottom']").click(function(){
+		$("select[name='page'] option:last").attr("selected","selected");
+	});
+});
+</script>
+</body>
+</html>

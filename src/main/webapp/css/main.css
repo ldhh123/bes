@@ -1,0 +1,12 @@
+.content { width: 100%; }
+.content .menu { height: 100%; width: 220px; background-color: #333333; float: left; text-align: center; overflow: hidden; }
+.content .menu dt { line-height: 33px; color: #FFFFFF; border-bottom-width: 5px; border-bottom-style: solid; border-bottom-color: #666666; font-weight: bold; }
+.content .menu dt:hover { background-color: #FFFFFF; color: #666666; border-bottom-width: 5px; border-bottom-style: solid; border-bottom-color: #FFCC33; cursor: pointer; }
+.content .menu ul, dd { margin: 0px; padding: 0px; list-style-type: none; }
+.content .menu li { line-height: 33px; margin-left: 0px; background-color: #999999; }
+.content .menu a { display: block; color: #FFFFFF; }
+.content .menu a:hover { color: #666666; background-color: #FFFFFF; border-left-width: 5px; border-left-style: solid; border-left-color: #FFCC33; }
+.content .main { background-color: #FFFFFF; height: 100px; width: 300px; float: left; }
+.content .main iframe { height: 100%; width: 100%; }
+.content .lan_arra { background: url(../img/main-left_arrow.gif) no-repeat; height: 48px; width: 5px; float: left; }
+.topall .login_alt { font-size: 14px; float: left; width: 300px; line-height: 70px; text-align: right; color: #CCCCCC; }

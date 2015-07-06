@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>MAIN</title>
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<link href="../css/main.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/jquery-1.8.1.min.js"></script>
+</head>
+<body>
+<div class="topall">
+  <div class="logo"></div>
+  <div class="login_alt">Hi! admin[系统管理员]</div>
+</div>
+<div class="content">
+  <div class="menu">
+    <dt>房源管理</dt>
+    <dd>
+      <ul>
+        <li><a target="main" href="houseAdd.html">发布房源</a></li>
+        <li><a target="main" href="houseList.html">维护房源</a></li>
+      </ul>
+    </dd>
+    <dt>个人中心</dt>
+    <dd>
+      <ul>
+        <li><a target="main" href="modUserInfo.html">编辑资料</a></li>
+        <li><a target="main" href="modPassword.html">修改密码</a></li>
+      </ul>
+    </dd>
+  </div>
+	<div class="lan_arra"></div>
+  <div class="main">
+    <iframe name="main" frameborder="0" src="welcome.html" scrolling="auto"></iframe>
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){
+	$(".menu dd").css("display","none");
+	$(".menu dt").click(function(){
+		$(".menu dd").css("display","none");
+		$(this).next("dd").slideDown(300);
+	});
+	
+	
+	$(window).bind("load", resizeWindow);
+	$(window).bind("resize", resizeWindow);
+	function resizeWindow( e ) {
+		var all_h = $(window).height();
+		var all_w = $(window).width();
+		
+		var top_size = $(".topall").height() + 4;
+		var meu_size = $(".menu").width();
+		var lan_size = $(".lan_arra").width();
+		
+		$(".menu").height(all_h - top_size);
+		$(".lan_arra").height(all_h - top_size);
+		$(".main").width((all_w - meu_size - lan_size - 17) + "px");
+		$(".main").height(all_h - top_size);
+	}
+
+	//处理菜单DIV改变事件
+	$(".menu").bind("resize", resizeWindow);
+	$(".lan_arra").click(function(){
+		if($(".menu").width()>0){
+			//$(".menu").animate({width: 'toggle'});
+			$(".menu").animate({width:"0px"});
+			$(".lan_arra").css("background","url(../img/main-right_arrow.gif) no-repeat");
+			$(".main").width($(window).width() - 30);//解决谷歌显示问题
+		}else{
+			$(".menu").animate({width:"220px"});
+			$(".lan_arra").css("background","url(../img/main-left_arrow.gif) no-repeat");
+			$(".main").width($(window).width() - 30 - 220);//解决谷歌显示问题
+		}
+	});
+
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>发布房源</title>
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/jquery-1.8.1.min.js"></script>
+</head>
+<body>
+<div class="opt_cont">
+  <div class="opt_lanbar"><a href="welcome.html">首页</a> &gt; 发布房源</div>
+  <div class="form_box">
+    <form id="houseform" method="post">
+      <div class="input_box">
+        <label><strong>*</strong>小区名称：</label>
+        <input name="name" type="text" size="50" />
+        <div class="alt_box" id="msg_name">小区名称不能为空！</div>
+      </div>
+      <div class="input_box">
+        <label><strong>*</strong>平层面积：</label>
+        <select name="">
+          <option value="1">100~120平</option>
+          <option value="2">120~160平</option>
+          <option value="3">160平以上</option>
+        </select>
+      </div>
+      <div class="input_box">
+        <label><strong>*</strong>房屋类型：</label>
+        <select name="">
+          <option value="1">别墅</option>
+          <option value="2">联排</option>
+          <option value="3">洋房</option>
+        </select>
+      </div>
+      <div class="input_box">
+        <label><strong>*</strong>户型：</label>
+        <input name="" type="checkbox" value="" />书房
+  			<input name="" type="checkbox" value="" />保姆房
+  			<input name="" type="checkbox" value="" />健身房
+  			<input name="" type="checkbox" value="" />观影房
+      </div>
+      <div class="input_box">
+        <label><strong>*</strong>配套：</label>
+        <input name="" type="checkbox" value="" />全新装修无配套
+  			<input name="" type="checkbox" value="" />家电齐全
+  			<input name="" type="checkbox" value="" />地暖
+  			<input name="" type="checkbox" value="" />马桶
+  			<input name="" type="checkbox" value="" />中庭
+  			<input name="" type="checkbox" value="" />江景
+      </div>
+      <div class="input_box">
+        <label><strong>*</strong>展示图片：</label>
+        <input name="" type="file" />
+        <input name="" type="file" />
+        <input name="" type="file" />
+        <input name="" type="file" />
+        <div class="alt_box" id="msg_menu">请至少选择1张图片！</div>
+      </div>
+      <div class="input_box">
+        <label>说明：</label>
+        <textarea name="note" cols="40"></textarea>
+        <div class="alt_box" id="msg_note"></div>
+      </div>
+      <div class="button_box">
+        <input type="submit" value="保存" />
+      </div>
+    </form>
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){
+	$(".alt_box").css("display","none");
+	
+	$("#houseform").submit(function(){
+		$(".alt_box").css("display","none");
+		
+		var name = $("[name='name']").val();
+		if($.trim(name)==""){
+			$("#msg_name").css("display","block");
+			$("[name='name']").select();
+			return false;
+		}
+		
+		$("input[type='submit']").attr("disabled","disabled");
+		
+		$("#roleform").attr("action","addOn.html");
+		return false;
+	});
+	
+});
+</script>
+</body>
+</html>

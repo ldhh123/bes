@@ -1,0 +1,12 @@
+* { font-family: 'Microsoft Yahei', 'Simsun', Arial; color: #333333; }
+HTML, BODY { border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; margin: 0; padding: 0; background-color: #CCCCCC; margin: 0 auto; height: 100%; width: 100%; overflow: auto; }
+DIV { margin-right: auto; margin-left: auto; }
+A { color: #000000; text-decoration: none; }
+.view_size { width: 1000px; }
+.overflow { clear: left; }
+.topall { background-color: #666666; height: 70px; }
+.logo { background-image: url(../img/LOGO-font.png); background-repeat: no-repeat; height: 70px; width: 300px; float: left; background-position: 3px; }
+.topall .view_size .link { float: left; height: 70px; width: 700px; text-align: right; line-height: 70px; color: #FFFFFF; }
+.topall .view_size .link a { color: #FFFFFF; padding: 6px; }
+.topall .view_size .link a:hover { color: #FF9900; background-color: #FFFFFF; }
+.copyright { font-size: 14px; color: #666666; text-align: center; margin-top: 2pc; }

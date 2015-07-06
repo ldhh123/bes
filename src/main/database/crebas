@@ -1,0 +1,93 @@
+/*==============================================================*/
+/* DBMS name:      ORACLE Version 11g                           */
+/* Created on:     2015/5/19 11:25:12                           */
+/*==============================================================*/
+
+
+drop index IND_USERNAME;
+
+drop table SYS_USER cascade constraints;
+
+drop sequence SEQ_SYS_USER;
+
+create sequence SEQ_SYS_USER
+increment by 1
+start with 1
+ maxvalue 9999999999999
+ minvalue 1
+ cache 20;
+
+/*==============================================================*/
+/* Table: SYS_USER                                              */
+/*==============================================================*/
+create table SYS_USER 
+(
+   ID                   int                  not null,
+   USERNAME             varchar(30)          not null,
+   NICKNAME             varchar(30),
+   PASSWORD             varchar(50)          not null,
+   SALT                 varchar(50),
+   USERTYPE             NUMBER               default 1 not null,
+   EMAIL                varchar(50),
+   STATUS               NUMBER               default 1 not null,
+   DESCN                varchar(255),
+   CREATE_DATE          DATE                 default SYSDATE,
+   LAST_LOGIN_DATE      DATE,
+   LAST_LOGIN_IP        varchar(30),
+   EXPIRED_DATE         DATE,
+   UNLOCK_DATE          DATE,
+   constraint PK_SYS_USER primary key (ID)
+);
+
+comment on table SYS_USER is
+'系统用户表';
+
+comment on column SYS_USER.ID is
+'主键ID';
+
+comment on column SYS_USER.USERNAME is
+'登录用户名';
+
+comment on column SYS_USER.NICKNAME is
+'操作员姓名';
+
+comment on column SYS_USER.PASSWORD is
+'登录密码';
+
+comment on column SYS_USER.SALT is
+'密码加密填充值';
+
+comment on column SYS_USER.USERTYPE is
+'用户类型{1:管理员,2:操作员}';
+
+comment on column SYS_USER.EMAIL is
+'电子邮件';
+
+comment on column SYS_USER.STATUS is
+'状态{1:启用,0:禁用}';
+
+comment on column SYS_USER.DESCN is
+'描述';
+
+comment on column SYS_USER.CREATE_DATE is
+'创建时间';
+
+comment on column SYS_USER.LAST_LOGIN_DATE is
+'最后登录时间';
+
+comment on column SYS_USER.LAST_LOGIN_IP is
+'最后登录IP';
+
+comment on column SYS_USER.EXPIRED_DATE is
+'过期时间';
+
+comment on column SYS_USER.UNLOCK_DATE is
+'解锁时间';
+
+/*==============================================================*/
+/* Index: IND_USERNAME                                          */
+/*==============================================================*/
+create unique index IND_USERNAME on SYS_USER (
+   USERNAME ASC
+);
+

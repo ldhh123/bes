@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>修改密码</title>
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/jquery-1.8.1.min.js"></script>
+</head>
+<body>
+<div class="opt_cont">
+  <div class="opt_lanbar"><a href="welcome.html">首页</a> &gt; 编辑资料</div>
+  <div class="form_box">
+    <form id="userform" method="post">
+      <div class="input_box">
+      <img src="../img/house-list.png" width="100" height="100" /><br>
+      <a href="#">编辑头像</a> </div>
+      <div class="input_box">
+        <label><strong>*</strong>昵称：</label>
+        <input name="nickname" type="input" />
+        <div class="alt_box" id="msg_nickname">昵称不能为空！</div>
+      </div>
+      <div class="input_box">
+        <label><strong>*</strong>手机：</label>
+        <input name="mobile" type="input" />
+        <div class="alt_box" id="msg_mobile">手机号码不能为空！</div>
+      </div>
+      <div class="input_box">
+        <label>QQ：</label>
+        <input name="qq" type="input" />
+      </div>
+      <div class="input_box">
+        <label>个人签名：</label>
+        <textarea name="note" cols="40"></textarea>
+      </div>
+      <div class="button_box">
+        <input type="submit" value="保存" />
+      </div>
+    </form>
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){
+	$(".alt_box").css("display","none");
+	
+	$("#userform").submit(function(){
+		$(".alt_box").css("display","none");
+		
+		var nickname = $("[name='nickname']").val();
+		if($.trim(nickname)==""){
+			$("#msg_nickname").css("display","block");
+			$("[name='nickname']").select();
+			return false;
+		}
+		
+		$("input[type='submit']").attr("disabled","disabled");
+		
+		$("#userform").attr("action","onUp.html");
+		return false;
+	});
+
+});
+</script>
+</body>
+</html>

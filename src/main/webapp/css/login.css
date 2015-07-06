@@ -1,0 +1,14 @@
+.content { margin-top: 2pc; }
+.content .login_img { background-image: url(../img/login-yz.png); background-repeat: no-repeat; height: 400px; width: 700px; float: left; }
+.content .login_box { background-color: #FFFFFF; float: left; height: 400px; width: 300px; }
+.content .login_box .chkcard { padding: 18px; }
+.content .login_box .chkcard a { font-size: 18px; color: #666666; padding: 6px; margin-left: 1pc; text-decoration: none; }
+.content .login_box .chkcard .active { color: #FF6600; border-bottom-width: 3px; border-bottom-style: solid; border-bottom-color: #FF6600; }
+.login_box input { border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding: 2px; font-size: 16px; margin: 2px; line-height: 28px; color: #666666; outline: none; /* 取消选中边框 */ background-color: #FFFFFF; }
+.login_box .msg_div { font-size: 14px; color: #FF0000; padding-left: 23px; }
+.login_box .div_username { background-image: url(../img/login-form-sprt.png); background-repeat: no-repeat; background-position: 5px 7px; width: 220px; padding-left: 33px; border: 1px solid #CCCCCC; margin-top: 1pc; box-shadow: 0 1px 3px rgba(7, 6, 6, .05); /* 阴影 */ border-radius: 4px; /* 圆角 */ }
+.login_box .div_password { background-image: url(../img/login-form-sprt.png); background-position: 5px -43px; }
+.login_box .div_vcode { width: 120px; padding-left: 0px; float: left; margin-left: 22px; }
+.login_box .div_mark { border: 1px solid #CCCCCC; float: left; margin-top: 1pc; line-height: 35px; font-size: 18px; font-style: italic; color: #CCCCCC; font-weight: bold; width: 100px; margin-left: 1pc; }
+.login_box .div_submit { width: 240px; margin-top: 1pc; float: left; margin-left: 22px; text-align: center; }
+.login_box .div_submit input { width: 100%; background-color: #FF9900; color: #FFFFFF; }
